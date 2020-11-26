@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container {
+    background-color: lightskyblue;
+    width: 50vw;
+    height: 35vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: white;
+    padding-bottom: 40px;
+    font-size: 1.5em;
+}
+
+.list {
+    width: 50vw;
+    margin: 0 auto;
+}
+
+p {
+    background-color: rgb(232, 233, 235);
+    font-size: 1.3em;
+    display: flex;
+    padding: 7px;
+}
+
+.test1 .check {
+    width: 5vw;
+    display: inline-block;
+    text-align: center;
+    visibility: hidden;
+}
+
+.test2 .check, .test2 .cross {
+    visibility: visible;
+    width: 5vw;
+    display: inline-block;
+    text-align: center;
+}
+
+.test2 {
+    background-color: rgba(184, 204, 224, 0.603);
+}
+
+.check {
+    padding-right: 2vw;
+}
+
+.test2 .text {
+    text-decoration: line-through;
+}
+
+.cross {
+    padding-left: 2vw;
+}
+
+.cross:hover, .text:hover, .add:hover {
+    cursor: pointer;
+}
+
+.cross:hover {
+    font-weight: bolder;
+}
+
+.text:hover {
+    color: rgba(0, 0, 0, 0.562);
+}
+
+.text {
+    width: 40vw;
+}
+
+.inputText {
+    padding: 10px 5px;
+    width: 30vw;
+
+    border: none;
+}
+
+.add {
+    color: white;
+    background-color: rgb(54, 247, 54);
+    padding: 3px;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    
+}
+
+.add, .inputText {
+    font-size: large;
+}
+
+.add:hover {
+    background-color: rgba(54, 247, 54, 0.637);
+}
+
+form {
+    display: flex;
+}
+
+h3 {
+    padding-bottom: 30px;
+}
