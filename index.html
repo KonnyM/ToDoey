@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>ToDoey</title>
 </head>
-<body>
+<body onload="displayList()">
     <section class="container">
     <h3>ToDoey - List</h3>
     <form>
@@ -16,13 +16,6 @@
     </form>
     </section>
 
-    <section class="list">
-        <p class="test1">
-            <span class="check" style="color: white;">&check;</span> <span class="text">Ställa ut soptunnorna</span> <span class="cross" style="color: rgba(0, 0, 0, 0.363);">&Cross;</span>
-        </p>
-        <p class="test2">
-            <span class="check" style="color: white;">&check;</span> <span class="text">Gå ut med hunden</span> <span class="cross" style="color: rgba(0, 0, 0, 0.363);">&Cross;</span>
-        </p>
-    </section>
+    <section class="list"></section>
 </body>
 </html>

@@ -1,22 +1,46 @@
-$(".cross").click(function() {
-    // alert("The cross button is working.")
-    event.preventDefault();
-    $(this).parent().remove();
+let toDoList = [{description: "Gå ut med hunden", finished: false}, {description: "Åka och handla", finished: true}, {description: "Laga middag", finished: false}];
+let historyOfActivities = [];
 
-    // *******
-    // If one only wants to hide the items:
-    // $(this).parent().hide();
-    // instead of the line above.
+function displayList() {
+    for (let todo of toDoList) {
+            $(".list").append(`<p ${todo.finished ? "class=modify" : ""}> <span class="check" style="color: white">&check;</span> <span class="text" title="toggle check status">${todo.description}</span> <span class="cross" style="color: rgba(0, 0, 0, 0.363)">&Cross;</span>
+            </p>`);
+    }
+}
 
-});
-
-$(".text").click(function() {
-    event.preventDefault();
-    $(this).css("text-decoration","line-through");
-    $(this).siblings(".check").css("visibility", "visible");
-    $(this).parent().css("background-color", "rgba(184, 204, 224, 0.603)")
-});
 
 $(".add").click(function() {
     event.preventDefault();
+    
+    if (($(".inputText").val().trim() != "")) {
+        toDoList.push({
+            description: $(".inputText").val().replaceAll(" ", "&nbsp;"),
+            finished: false
+        });
+        historyOfActivities.push({
+            description: $(".inputText").val().replaceAll(" ", "&nbsp;"),
+            finished: false
+        });
+        $(".inputText").val("");
+        clearDisplayList();
+        displayList();
+    }
+
 });
+
+$(".list").on("click", ".cross", function() {
+    event.preventDefault();
+    toDoList.splice($(this).parent().index(), 1);
+    clearDisplayList();
+    displayList();
+});
+
+$(".list").on("click", ".text", function() {
+    event.preventDefault();
+    $(this).parent().attr("class", "modify");
+    toDoList[$(this).parent().index()].finished = true;
+});
+
+function clearDisplayList() {
+    $("p").remove();
+}
